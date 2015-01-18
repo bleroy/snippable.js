@@ -96,11 +96,10 @@ You can then require the library and parse files using it:
     var snippable = new Snippable();
     var path = 'docs/document.yaml.md';
     fs.readFile(path, function(err, data) {
-      snippable.parse(data, path, function(parts) {
-        var header = parts[0];
-        var body = parts[1];
-        // Do something with the header and body.
-      });
+      var parts = snippable.parse(data, path);
+      var header = parts[0];
+      var body = parts[1];
+      // Do something with the header and body.
     });
 
 Adding a parser
@@ -114,12 +113,12 @@ will be handed out as a string).
 
 You may add your own parsers:
 
-    snippable.registerParser('csv', function(text, done) {
+    snippable.registerParser('csv', function(text) {
       var lines = splitLines(text);
       var parsed = lines.map(function(line) {
         return splitOnCommas(line);
       })
-      done(parsed);
+      return parsed;
     });
 
 License
