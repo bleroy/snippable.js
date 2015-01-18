@@ -1,5 +1,5 @@
 {
-  "name": "Snippable",
+  "name": "snippable",
   "version": "0.1.1",
   "description": "Parse human-writable multipart documents",
   "main": "./index",
