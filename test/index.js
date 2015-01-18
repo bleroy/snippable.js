@@ -76,28 +76,14 @@ describe('Snippable.js', function() {
     expect(parts).to.deep.equal(['foo', 'bar']);
   });
 
-  it('will yield strings if no format is specified', function() {
-    var document = 'foo\r\n'
+  it('will yield YAML and strings if no format is specified', function() {
+    var document = 'foo: bar\r\n'
       + '-8<--\r\n'
       + 'bar';
     var snippable = new Snippable();
 
     var parts = snippable.parse(document);
-    expect(parts).to.deep.equal(['foo', 'bar']);
-    parts = snippable.parse(document, []);
-    expect(parts).to.deep.equal(['foo', 'bar']);
-  });
-
-  it('will yield strings if no format is specified', function() {
-    var document = 'foo\r\n'
-      + '-8<--\r\n'
-      + 'bar';
-    var snippable = new Snippable();
-
-    var parts = snippable.parse(document);
-    expect(parts).to.deep.equal(['foo', 'bar']);
-    parts = snippable.parse(document, []);
-    expect(parts).to.deep.equal(['foo', 'bar']);
+    expect(parts).to.deep.equal([{foo: 'bar'}, 'bar']);
   });
 
   it('can use a path to infer part formats', function() {

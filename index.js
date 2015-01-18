@@ -44,7 +44,9 @@ Snippable.prototype.parse = function parse(text, formatsOrFileName) {
   var splitExpression = /^-8<-+(-\^-([^-]+)-+)?(-v-([^-]+)-+)?-+$/gm;
   var formats = Array.isArray(formatsOrFileName)
     ? formatsOrFileName
-    : this.getFormatsFromFileName(formatsOrFileName);
+    : formatsOrFileName
+    ? this.getFormatsFromFileName(formatsOrFileName)
+    : ['yaml'];
   var partSources = [];
   var i = 0;
   var current = 0;
