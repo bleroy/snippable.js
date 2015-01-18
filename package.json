@@ -1,0 +1,31 @@
+{
+  "name": "Snippable",
+  "version": "0.1.1",
+  "description": "Parse human-writable multipart documents",
+  "main": "./index",
+  "scripts": {
+    "test": "./test/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bleroy/snippable.js.git"
+  },
+  "keywords": [
+    "human-writable",
+    "human-readable",
+    "multipart"
+  ],
+  "author": "Bertrand Le Roy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bleroy/snippable.js/issues"
+  },
+  "homepage": "https://github.com/bleroy/snippable.js",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "yamljs": "^0.2.1"
+  }
+}
